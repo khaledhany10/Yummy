@@ -279,7 +279,7 @@ async function getAreaMeals(area) {
 }
 
 function goToHome() {
-    window.location.href = window.location.href.split('/').slice(0, -1).join('/') + '/index.html';
+    window.location.href = window.location.href.split('/').slice(0, -1).join('/') + 'index.html';
 }
 
 
