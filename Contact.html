@@ -1,3 +1,4 @@
+<!-- Contact.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="fontawesome-free/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="css/main.css" />
     <title>Yummy Exam</title>
   </head>
   <body>
 
-    <div class="side-nav position-fixed d-flex top-0 min-vh-100">
-      <div class="nav-tab d-flex flex-column justify-content-between min-vh-100 p-4">
+    <div class="side-nav position-relative d-flex top-0 container start-0">
+      <div class="nav-tab flex-column justify-content-between p-4" style="display: none;">
         <div class="links">
           <ul class="list-unstyled overflow-hidden">
-            <li onclick="SearchInput(); closeSideNav()"> <a href="Search.html" class="py-2 position-relative cursor-pointer text-light">Search</a></li>
-            <li onclick="getCategories(); closeSideNav()" class="py-2 position-relative cursor-pointer">Categories</li>
-            <li onclick="getArea(); closeSideNav()" class="py-2 position-relative cursor-pointer">Area</li>
-            <li onclick="getIngredients(); closeSideNav()" class="py-2 position-relative cursor-pointer">Ingredients</li>
-            <li onclick="showContacts(); closeSideNav()"><a href="Contact.html" class="py-2 position-relative cursor-pointer text-light">Contact Us</a></li>
+            <li onclick="SearchInput();"> <a href="Search.html" class="py-2 cursor-pointer text-light">Search</a></li>
+            <li onclick="getCategories();" class="py-2 cursor-pointer">Categories</li>
+            <li onclick="getArea();" class="py-2 cursor-pointer">Area</li>
+            <li onclick="getIngredients();" class="py-2 cursor-pointer">Ingredients</li>
+            <li onclick="showContacts();"><a href="Contact.html" class="py-2 cursor-pointer text-light">Contact Us</a></li>
           </ul>
         </div>
         <div class="nav-footer">
@@ -35,7 +37,10 @@
       </div>
       <div class="nav-header d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black">
         <img class="logo" src="img/logo.png" alt=""/>
-        <i class="fa-solid open-close-icon fa-align-justify fa-2x"></i>
+        <div class="mohamed">
+          <i class="fa-solid fa-bars fs-2"></i>
+          <i class="fa-solid fa-xmark" style="display: none;"></i>
+        </div>
         <div>
           <i class="fa-solid fa-globe d-block"></i>
           <i class="fa-solid fa-share-nodes"></i>
@@ -65,7 +70,7 @@
                   </div>
                   <button class="btn btn-danger w-25 position-relative start-50 translate-middle-x">Submit</button>
               </div>
-            </div>
+        </div>
 
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

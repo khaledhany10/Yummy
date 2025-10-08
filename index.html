@@ -9,55 +9,61 @@
     <title>Yummy Exam</title>
   </head>
   <body>
+    <!-- Loading Screen -->
     <div class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center">
-      <i class="fa fa-spinner fa-spin fa-5x"></i>
+      <i class="fa fa-spinner fa-spin fa-5x text-electric"></i>
     </div>
 
-    <div class="side-nav position-fixed d-flex top-0 min-vh-100">
-      <div class="nav-tab d-flex flex-column justify-content-between min-vh-100 p-4 navTab">
-        <div class="links">
-          <ul class="list-unstyled overflow-hidden">
-            <li onclick="SearchInput(); closeSideNav()"> <a href="Search.html" class="py-2 position-relative cursor-pointer text-light">Search</a></li>
-            <li onclick="getCategories(); closeSideNav()" class="py-2 position-relative cursor-pointer">Categories</li>
-            <li onclick="getArea(); closeSideNav()" class="py-2 position-relative cursor-pointer">Area</li>
-            <li onclick="getIngredients(); closeSideNav()" class="py-2 position-relative cursor-pointer">Ingredients</li>
-            <li onclick="showContacts(); closeSideNav()"><a href="Contact.html" class="py-2 position-relative cursor-pointer text-light">Contact Us</a></li>
+    <!-- Sidebar Navigation -->
+    <div class="side-navbar">
+      <div class="nav-content">
+        <div class="nav-header">
+          <img class="logo" src="img/logo.png" alt="Yummy Logo"/>
+          <div class="menu-toggle">
+            <i class="fa-solid fa-xmark nav-close" style="display: none;"></i>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <ul class="list-unstyled">
+            <li><a href="#" onclick="showSearchInputs()" class="nav-link">Search</a></li>
+            <li><a href="#" onclick="getCategories()" class="nav-link">Categories</a></li>
+            <li><a href="#" onclick="getArea()" class="nav-link">Area</a></li>
+            <li><a href="#" onclick="getIngredients()" class="nav-link">Ingredients</a></li>
+            <li><a href="#" onclick="showContacts()" class="nav-link">Contact Us</a></li>
           </ul>
         </div>
+
         <div class="nav-footer">
-          <div class="icons">
+          <div class="social-icons">
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-twitter"></i>
             <i class="fa-solid fa-globe"></i>
           </div>
-          <div class="footer">
-            <p>Copyright Â© 2019 All Rights
-              Reserved.</p>
+          <div class="footer-text">
+            <p>Copyright © 2019 All Rights Reserved.</p>
           </div>
         </div>
       </div>
-      <div class="nav-header d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black">
-        <img class="logo" src="img/logo.png" alt=""/>
-        <i class="fa-solid open-close-icon fa-align-justify fa-2x mohamed"></i>
-        <div>
-          <i class="fa-solid fa-globe d-block"></i>
-          <i class="fa-solid fa-share-nodes"></i>
-          
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Search Container -->
+      <div class="container w-75" id="searchContainer">
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area min-vh-100 position-relative">
+        <div class="inner-loading-screen top-0 start-0 end-0 bottom-0 justify-content-center align-items-center">
+          <i class="fa fa-spinner fa-spin fa-5x text-electric"></i>
+        </div>
+        <div class="container">
+          <div class="row py-5 g-4" id="rowData"></div>
         </div>
       </div>
     </div>
 
-    <div class="container w-75" id="searchContainer">
-    </div>
-
-    <div class="min-vh-100 position-relative">
-      <div class="inner-loading-screen top-0 start-0 end-0 bottom-0 justify-content-center align-items-center">
-        <i class="fa fa-spinner fa-spin fa-5x"></i>
-      </div>
-      <div class="container">
-        <div class="row py-5 g-4" id="rowData"></div>
-      </div>
-    </div>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>

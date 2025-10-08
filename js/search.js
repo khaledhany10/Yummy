@@ -1,3 +1,4 @@
+// <reference types="../@types/jquery" />
 $(document).ready(() => {
     let urlParams = new URLSearchParams(window.location.search);
     let query = urlParams.get('query');
@@ -7,26 +8,26 @@ $(document).ready(() => {
 async function searchByName(mealName) {
     $("#rowData").html("");
     $(".inner-loading-screen").fadeIn(300);
-    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`);
-    response = await response.json();
-    displayMeals(response.meals);
+    let x = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`);
+    response = await x.json();
+    console.log(displayMeals(response.meals));
     $(".inner-loading-screen").fadeOut(1000);
 }
 
 function displayMeals(arr) {
     let content = "";
-    for (let i = 0; i < arr.length; i++) {
+    arr.forEach(khaled => {
         content += `
         <div class="col-md-3">
-                <div onclick="getMealDetails('${arr[i].idMeal}')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
-                    <img class="w-100" src="${arr[i].strMealThumb}" alt="">
+                <div onclick="getMealDetails('${khaled.idMeal}')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+                    <img class="w-100" src="${khaled.strMealThumb}" alt="">
                     <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
-                        <h3>${arr[i].strMeal}</h3>
+                        <h3>${khaled.strMeal}</h3>
                     </div>
                 </div>
         </div>
-        `;
-    }
+        `
+    });
     $("#rowData").html(content);
 }
 
