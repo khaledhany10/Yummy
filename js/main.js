@@ -278,6 +278,11 @@ async function getAreaMeals(area) {
     $(".inner-loading-screen").fadeOut(200);
 }
 
+function goToHome() {
+    window.location.href = window.location.href.split('/').slice(0, -1).join('/') + '/index.html';
+}
+
+
 function displayAreaMeals(meals, area) {
     let cartoona = `
         <div class="d-flex justify-content-between align-items-center mb-4">
